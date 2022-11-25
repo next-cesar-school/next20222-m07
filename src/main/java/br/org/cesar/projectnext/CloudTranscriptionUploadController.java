@@ -1,4 +1,4 @@
-package br.org.cesar.projectnext.cloudtranscription.controller;
+package br.org.cesar.projectnext;
 
 import java.io.IOException;
 
@@ -9,9 +9,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
-
-import br.org.cesar.projectnext.cloudtranscription.model.CloudTranscriptionModel;
-import br.org.cesar.projectnext.cloudtranscription.ultil.CloudTranscriptionUtil;
 
 @RestController
 public class CloudTranscriptionUploadController {

@@ -1,4 +1,4 @@
-package br.org.cesar.projectnext.cloudtranscription.model;
+package br.org.cesar.projectnext;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
