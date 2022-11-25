@@ -11,15 +11,22 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
+public class AudioController {
+   
 @RestController
 class TranslateTextController {
+    static TranscriptionService transcriptionService;
+    
     static String textoTraduzido = "";
 
     @PostMapping("/EnToPt")
-    public ResponseEntity<String> translateEnToPt(@RequestBody String text) throws IOException {
-        String translatedText = translateTextEn(text);
+    public ResponseEntity<String> translateEnToPt(@RequestParam("file") MultipartFile multipartFile) throws IOException {
+        String transcriptedAudio = transcriptionService.transcript(multipartFile.getBytes());
+        String translatedText = translateTextEn(transcriptedAudio);
         return new ResponseEntity<String>(translatedText, HttpStatus.OK);
     }
 
@@ -70,5 +77,7 @@ class TranslateTextController {
         return textoTraduzido;
     }
 
+}
+    
 }
 
