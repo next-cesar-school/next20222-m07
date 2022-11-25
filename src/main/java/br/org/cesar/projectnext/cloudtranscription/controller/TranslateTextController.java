@@ -1,4 +1,4 @@
-package br.org.cesar.projectnext.cloudtranscription;
+package br.org.cesar.projectnext.cloudtranscription.controller;
 
 import com.google.cloud.translate.v3.LocationName;
 import com.google.cloud.translate.v3.TranslateTextRequest;

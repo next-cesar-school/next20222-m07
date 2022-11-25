@@ -1,4 +1,4 @@
-package br.org.cesar.projectnext.cloudtranscription;
+package br.org.cesar.projectnext.cloudtranscription.controller;
 
 import java.io.IOException;
 
@@ -10,18 +10,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
-@RestController
-// public class CloudTranscriptionUploadController {
-//     @PostMapping("/uploadFile")
-//     public ResponseEntity<CloudTranscriptionModel> uploadFile(@RequestParam("file") MultipartFile multipartFile) throws IOException {
-//         String fileName = StringUtils.cleanPath(multipartFile.getOriginalFilename());
-//         CloudTranscriptionModel response = new CloudTranscriptionModel(fileName);
-//         response.setFileName(fileName);
-//         return new ResponseEntity<>(response, HttpStatus.OK);
-//     }
-// }
- 
+import br.org.cesar.projectnext.cloudtranscription.model.CloudTranscriptionModel;
+import br.org.cesar.projectnext.cloudtranscription.ultil.CloudTranscriptionUtil;
 
+@RestController
 public class CloudTranscriptionUploadController {
     @PostMapping("/uploadFile")
     public ResponseEntity<CloudTranscriptionModel> uploadFile(@RequestParam("file") MultipartFile multipartFile) throws IOException {
