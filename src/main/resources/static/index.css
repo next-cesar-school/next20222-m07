@@ -1,0 +1,35 @@
+html{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   height: 100vh;
+}
+
+* title{
+    display: none;
+}
+
+.container{
+    display: block;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+form{
+    margin-bottom: 0;
+    padding: 0;
+}
+
+.main-form{
+    width: 500px;
+    height: 100px;
+    color: #c1c1c1;
+}
+
+.div-image img{
+    display: center;
+    margin-bottom: 15px;
+    width: 130px;
+    height: 100px;
+}
