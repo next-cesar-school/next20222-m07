@@ -20,8 +20,15 @@ public class UploadTranscriptTranslateController {
     public ResponseEntity<String> uploadTranscriptTranslate (@RequestParam("file") MultipartFile multipartFile) throws IOException{
         String filename = multipartFile.getOriginalFilename();
         UploadFileToStorageService.uploadFile(multipartFile);
-        String transcription = CloudTranscriptionService.transcriptionFile(filename);
-        String translation = TranslateTextUtil.translateTextEn(transcription);
-        return new ResponseEntity<>("Transcrição do áudio: \n \"" + transcription + "\" \n\nTradução da transcrição do áudio para português:\n\"" + translation + "\"", HttpStatus.OK);
+
+        UploadTranscriptTranslateModel text = new UploadTranscriptTranslateModel();
+        text.setTranscription(CloudTranscriptionService.transcriptionFile(filename));
+        text.setTranslation(TranslateTextUtil.translateTextEn(text.getTranscription()));
+        
+        return new ResponseEntity<>("Transcrição do áudio: \n \""
+                                    + text.getTranscription()
+                                    + "\"\n\nTradução da transcrição do áudio para português:\n\""
+                                    + text.getTranslation()
+                                    + "\"", HttpStatus.OK);
     }
 }

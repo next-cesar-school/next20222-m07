@@ -15,11 +15,13 @@ import java.util.List;
 public class CloudTranscriptionService {
   static String transcription = ""; //Variável para guardar a string da transcrição
   
+  public final static String BUCKET_NAME = "gs://bucket-quickstart_project-next-369319/"; //Constante com o endereço padrão do bucket do projeto
+
   //Função de transcrição do áudio
   public static String transcriptionFile(String fileName) throws IOException{
       SpeechClient speechClient = SpeechClient.create();
-      String gcsUri = "gs://bucket-quickstart_project-next-369319/" + fileName; //Endereço do arquivo na GC Storage
-
+      String gcsUri =  BUCKET_NAME + fileName; //Endereço do arquivo na GC Storage
+      
        //Configuração para áudios .flac e .wav
       RecognitionConfig config = RecognitionConfig.newBuilder()
           .setLanguageCode("en") //Difinição do idioma do áudio
