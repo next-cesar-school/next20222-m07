@@ -17,7 +17,7 @@ import br.org.cesar.projectnext.cloudtranslate.TranslateTextUtil;
 @RestController
 public class UploadTranscriptTranslateController {
     @PostMapping("/projectnext")
-    public ResponseEntity<String> uploadTranscriptTranslate (@RequestParam("file") MultipartFile multipartFile) throws IOException{
+    public ResponseEntity<UploadTranscriptTranslateModel> uploadTranscriptTranslate (@RequestParam("file") MultipartFile multipartFile) throws IOException{
         String filename = multipartFile.getOriginalFilename();
         UploadFileToStorageService.uploadFile(multipartFile);
 
@@ -25,10 +25,6 @@ public class UploadTranscriptTranslateController {
         text.setTranscription(CloudTranscriptionService.transcriptionFile(filename));
         text.setTranslation(TranslateTextUtil.translateTextEn(text.getTranscription()));
         
-        return new ResponseEntity<>("Transcrição do áudio: \n \""
-                                    + text.getTranscription()
-                                    + "\"\n\nTradução da transcrição do áudio para português:\n\""
-                                    + text.getTranslation()
-                                    + "\"", HttpStatus.OK);
+        return new ResponseEntity<UploadTranscriptTranslateModel>(text, HttpStatus.OK);
     }
 }

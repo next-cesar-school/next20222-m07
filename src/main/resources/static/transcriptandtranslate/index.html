@@ -20,14 +20,20 @@
     <body>
         <div class="container">
             <div class="div-image">
-                <img src="images/logo.jpg">
+                <img src="../images/logo.jpg">
+                <h6>Transcrição de Áudio e Tradução </h6>
             </div>
-            <div class="list">
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item"><a link href="/transcriptandtranslate/index.html">Transcrição e Tradução</a></li>
-                    <li class="list-group-item"><a link href="/translate-en-pt/index.html">Traduzir texto de Inglês para Português</a></li>  
-                    <li class="list-group-item"><a link href="/translate-pt-en/index.html">Traduzir texto de Português para Inglês</a></li>
-                </ul>
+            <div class="main-form"></div>
+                <form action="/projectnext" method="POST" enctype="multipart/form-data">
+                    <div class="input-group">
+                        <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload" name="file" accept=".flac,.wav">
+                        <button class="btn btn-outline-success" type="submit" id="inputGroupFileAddon04">Enviar</button>
+                    </div>
+                </form>
+            </div>
+            <div class="bottom">
+                <button type="button" class="btn btn-secondary"><a href="../index.html">Voltar</a></button>
+                 </a>
             </div>
         </div>
     </body>

@@ -16,17 +16,27 @@ html{
     text-align: center;
 }
 
+
+.main-form{
+    margin-top: 30px;
+    color: #c1c1c1;
+}
+
 .div-image img{
     display: center;
-    margin-bottom: 15px;
     width: 130px;
     height: 100px;
 }
 
-.list {
-    text-align: left;
+.bottom{
+    text-align: center;
+    color: white;
+    margin-top: 15px;
 }
-.list li a{
-    color: teal;
+
+a {
+    color: white !important;
     text-decoration: none !important;
 }
+
+

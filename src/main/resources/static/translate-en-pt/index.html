@@ -20,14 +20,21 @@
     <body>
         <div class="container">
             <div class="div-image">
-                <img src="images/logo.jpg">
+                <img src="../images/logo.jpg">
+                <h6>Transcrição de Áudio e Tradução </h6>
             </div>
-            <div class="list">
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item"><a link href="/transcriptandtranslate/index.html">Transcrição e Tradução</a></li>
-                    <li class="list-group-item"><a link href="/translate-en-pt/index.html">Traduzir texto de Inglês para Português</a></li>  
-                    <li class="list-group-item"><a link href="/translate-pt-en/index.html">Traduzir texto de Português para Inglês</a></li>
-                </ul>
+            <div class="main-form"></div>
+                <form action="/EnToPt" method="POST" enctype="application/json">
+                    <div class="form-floating">
+                        <textarea class="form-control" placeholder="Texto em inglês a ser traduzido" id="floatingTextarea2" style="height: 100px"></textarea>
+                        <label for="floatingTextarea2">Texto em inglês a ser traduzido</label>
+                        <button class="btn btn-outline-success button-send" type="submit" id="inputGroupFileAddon04" style="margin-top: 15px;">Enviar</button>
+                      </div>
+                </form>
+            </div>
+            <div class="bottom">
+                <button type="button" class="btn btn-secondary"><a href="../index.html">Voltar</a></button>
+                 </a>
             </div>
         </div>
     </body>
