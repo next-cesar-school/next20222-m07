@@ -26,5 +26,5 @@ public class UploadTranscriptTranslateController {
         text.setTranslation(TranslateTextUtil.translateTextEn(text.getTranscription()));
         
         return new ResponseEntity<>(text, HttpStatus.OK);
-    }
+    } 
 }
